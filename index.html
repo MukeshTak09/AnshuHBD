@@ -1,0 +1,434 @@
+<!-- Created by Coder -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">  
+  <div id ="loader">
+      <h2>Loading...</h2>
+  </div>  
+    <title>Page Title</title>
+<style>
+/* Created by Coder */
+
+
+*{
+    user-select:none;
+}
+body {
+    background:#8dd0b3;    
+    max-width:100vw;
+    max-height:100vh;
+    overflow:hidden;
+
+}
+#cake{
+    position:absolute;
+    top:-50%;left:50%;
+    -webkit-transform:translate(-50%,-50%);
+        -ms-transform:translate(-50%,-50%);
+            transform:translate(-50%,-50%);
+    -webkit-transition:1s;
+    -o-transition:1s;
+    transition:1s;
+    visibility:hidden;
+}
+#p1{
+    z-index:1;
+}
+
+.layer{
+    width:50vw;
+    height:15px;
+    background:#2288ee;
+    margin-bottom:10px;
+    position:relative;
+    border-radius:20% 20% 0% 0%;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+    letter-spacing:4px;
+}
+.layer::after{
+    content:"";
+    z-index:1;
+    width:100%;
+    height:4px;
+    background:#e1c693;
+    position:absolute;
+    bottom:-5px;
+}
+.layer::before{
+    content:"";
+    z-index:1;
+    width:100%;
+    height:4px;
+    background:black;
+    position:absolute;
+    bottom:-10px;
+}
+
+.one{
+    width:50%;
+    margin-left:25%;
+    background:#ae7373;
+}
+.two{
+    width:75%;
+    margin-left:12.5%;
+    background:#e4d3ff;
+}
+.three{
+    background:#ffb4b4;
+    margin-left:5%;
+}
+.top{
+   width:50px;
+   height:10px;
+   background:tomato;
+   border-radius:50% 50% 0% 0%;
+   margin-left:calc(50% - 25px);
+   position:relative;
+}
+.top::after{
+    content:"";
+    z-index:1;
+    width:3px;
+    height:20px;
+    margin-left:22.5px;
+    background:black;
+    position:absolute;
+    top:-20px;
+    border-radius:50% 50% 0% 0%;
+}
+.top::before{
+    content:"";
+    z-index:2;
+    width:10px;
+    height:20px;
+    margin-left:19px;
+    background:orange;
+    position:absolute;
+    top:-35px;
+    border-radius:100%;
+    -webkit-clip-path:polygon(50% 0%,0% 100% ,100% 100%);
+            clip-path:polygon(50% 0%,0% 100% ,100% 100%);
+}
+#wish_txt{
+    text-align:center;
+    margin-top:20px;
+    font-size:20px;
+    font-weight:bold;
+    position:relative;
+    top:-100vh;
+    z-index:2;
+    font-family: 'Slabo 27px', serif;
+    opacity:0; 
+    -webkit-transition:0.8s; 
+    -o-transition:0.8s; 
+    transition:0.8s;
+}
+#go{
+  display:block;  
+  width:200px;
+  height:35px;
+  border:none;
+  outline:none;
+  position:relative;
+  top:40px;
+  background:none;
+  color:#000;
+  border-top:2px dotted;
+  border-bottom:2px dotted;
+  border-color:#4488ff #5588ff #9998ff;
+  font-weight:bold;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  z-index:3;
+  font-family: 'Slabo 27px', serif; 
+  visibility:hidden;
+  transition:0.8s;
+}
+.card{
+    padding:20px;
+    background:#fff;
+    height:70vh;
+    width:70vw;
+    position:absolute;
+    left:50%;top:50%;
+    transform:translate(-50%,-50%);
+    border-radius:5px;
+    -webkit-box-shadow: 0 20px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 20px rgba(0,0,0,0.15);
+      -webkit-transform:translate(-50%,-50%);
+        -ms-transform:translate(-50%,-50%);
+            transform:translate(-50%,-50%);
+    -webkit-transition:1s;
+    -o-transition:1s;
+    transition:1s;        
+    z-index:2;
+}
+
+.img{
+    width:100%;
+    height:auto;
+    //background:#ebebeb;
+    border-radius:5px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+.img img{
+    width:80px;height:80px;
+    background-position:center;
+    background-size:cover;
+    border-radius:50%;
+}
+.img p{
+    font-size:small;
+    font-family: 'Slabo 27px', serif; 
+    font-weight:bolder;
+}
+.wish{
+    width:100%;
+    height:70%;
+    background:#ebebeb;
+    border-radius:5px;
+    position:relative;
+}
+
+
+.swiper-container {
+      width: 100%;
+      height:100%;      
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 15px;
+    background: #fff;
+    font-family: 'Slabo 27px', serif; 
+    font-weight:400;
+       /* Center slide text vertically */ 
+    display: -webkit-box;
+    display: -ms-flexbox; 
+    display: -webkit-flex; 
+    display: flex; 
+    -webkit-box-pack: center; 
+    -ms-flex-pack: center; 
+    -webkit-justify-content: center;                             
+    justify-content: center; 
+    -webkit-box-align: center; 
+    -ms-flex-align: center; 
+    -webkit-align-items: center; 
+    align-items: center; 
+
+}
+
+#loader{
+    z-index:400;width:100%;
+    position:absolute;
+    top:0;left:0;height:100%;
+    background-image:linear-gradient(60deg, #F4F4E1, #F8D9D6);    background-image:-o-linear-gradient(30deg, #F4F4E1, #F8D9D6); background-image:linear-gradient(60deg, #F4F4E1, #F8D9D6);
+       /* Center slide text vertically */ 
+    display: -webkit-box;
+    display: -ms-flexbox; 
+    display: -webkit-flex; 
+    display: flex; 
+    -webkit-box-pack: center; 
+    -ms-flex-pack: center; 
+    -webkit-justify-content: center;                             
+    justify-content: center; 
+    -webkit-box-align: center; 
+    -ms-flex-align: center; 
+    -webkit-align-items: center; 
+    align-items: center; 
+    letter-spacing:4px;
+    animation:load 1s infinite alternate;
+    
+}
+@keyframes load{
+    to{letter-spacing:8px;}
+}
+
+
+
+.k{
+    position:absolute;
+    top:50%;left:55%;
+    transform:translate(-50%,-50%);
+  
+}
+.heart{    
+    width: 100px;
+    height: 90px;
+    animation:i 0.9s infinite alternate;
+}
+.heart:before,
+.heart:after{
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: #fc2e5a;
+    -moz-border-radius: 50px 50px 0 0;
+    border-radius: 50px 50px 0 0;
+    -webkit-transform: rotate(-45deg);
+       -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+         -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+       -moz-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+         -o-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+}
+.heart:after{
+    left: 0;
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+       -moz-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+         -o-transform-origin: 100% 100%;
+            transform-origin :100% 100%;
+}
+
+@keyframes i{
+    to{
+      transform:scale(1.4) translate(-50%,-50%);
+    }
+}
+
+#p2{
+    z-index:-1;
+}
+.btn{
+    padding:5px 10px;
+    border:none;
+    outline:none;
+    color:#fff;
+    background:#4488ff;
+}</style>
+<script>
+// Created by Coder
+
+
+window.onload = ()=>showCake();
+const showCake=()=>{
+    loader.remove();
+    cake.style.visibility="visible";
+    cake.style.top="50%";
+    setTimeout(()=>{
+        wish_txt.style.opacity="1";
+        wish_txt.style.top="20px";
+        go.style.visibility="visible";
+    },1000);
+};
+let a = true;
+const nextPage=()=>{
+if(a){
+    a = false;
+    a1.play();
+ }
+    c1.style.left="-50%";
+    setTimeout(()=>{
+      c1.remove(); 
+    },800);
+}
+const showNextPage=()=>{
+    alert("Wish you a very very happy birthday didi. I cant bday wish you through this code didi. you can an amazing gift for me didi. May god bless you didi and you achieve everything in your life. I wish everyone support you didi .")
+}</script>
+    </head>
+    <body>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+ <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
+    
+    <!--First Card-->
+    <div id="c1" class="card">
+      <div id="cake">
+          <div class="top"></div>
+          <div class="layer one"></div>
+          <div class="layer two"></div>
+          <div class="layer three"></div>
+          <p id="wish_txt">Happy Birthday Vanshika Didi</p>
+          <button onclick="nextPage()" id="go">Click Here</button>
+        </div>       
+     </div>  
+     
+     <!---Second Card-->     
+     <div id="p1" class="card">
+    
+   <div class="img">
+   
+       <img src="https://api.sololearn.com/Uploads/Avatars/14844042.jpg" alt="Happy Birthday Abeer"/>
+       <p>Vanshika didi</p>
+    </div>       
+       <div class="wish">
+        <div class="swiper-container">  
+     <div class="swiper-wrapper">      
+       <div class="swiper-slide">
+       My dearest sister, wish you a very warm and happy birthday. You are not only the sweetest sister but also a true friend. I feel blessed to have a sister like you. May you achieve and get all you ever wish for.
+       </div>
+    
+       <div class="swiper-slide">
+      May you achieve everything you desire in life. I wish you a very sweet and happy birthday. May you have an awesome life ahead. Enjoy your day.
+      
+       </div>       
+       <div class="swiper-slide">
+Happy Birthday Dear Sister You Are Amazing You Are Special You Are Unique You Are Kind You Are Precious You Are Loved.
+       </div>  
+       <div class="swiper-slide">
+       Wish a fabulous birthday to my cutest Didi.
+       </div>       
+       <div class="swiper-slide">
+My crazy, loving, caring and fun little sister, life without you would have been a crazy twister. Happy birthday
+       </div> 
+        
+         <div class="swiper-slide">
+<div class="heart k"></div>
+       </div> 
+        <div class="swiper-slide">
+Love You my Special didi .Thanks for your trust didi.
+       </div> 
+        <div class="swiper-slide">
+         
+         <button onclick="showNextPage()" class="btn">Click Here</button>
+       </div> 
+        
+    </div>
+    <div class="swiper-pagination"></div>
+   </div>    
+    
+       </div> 
+       </div> 
+     </div>
+     
+      
+     <audio id="a1" loop>
+         <source src="https://dl.dropbox.com/s/5hahg59xe84k0cp/I%20wish%20you%20Happy%20Happy%20birthday.mp3?dl=0"></source>
+     </audio>
+     
+     <script>
+      let swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+ </script>    
+    </body>
+</html>
